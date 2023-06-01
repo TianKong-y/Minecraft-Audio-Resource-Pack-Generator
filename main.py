@@ -4,7 +4,7 @@
 1.将需要生成资源包的音频放入audios文件夹
 2.运行main.py
 	2.1输入资源包名称、最低支持的版本
-3.在resource_pack文件夹中输出资源包压缩包文件
+3.在resource_pack文件夹中输出资源包文件
 """
 
 import os
@@ -21,7 +21,7 @@ def print_version():
 使用方法
 1.将需要生成资源包的音频放入audios文件夹
 2.按照此界面的提示输入资源包基础信息
-3.在resource_pack文件夹中找到生成的资源包压缩包文件夹，自行压缩为zip文件""")
+3.在resource_pack文件夹中找到生成的资源包文件夹，自行压缩为zip文件""")
 	print("注意事项:")
 	print("1.audios文件夹中的音频文件名只能为英文/下划线")
 	print("2.音频的后缀名必须为.ogg")
@@ -91,3 +91,5 @@ for tmp in fileList:
 
 sounds_json.write(last + "\n")
 sounds_json.write("}")
+
+print("资源包生成完毕，请在resource_pack文件夹下找到输出资源包文件夹，自行压缩")
