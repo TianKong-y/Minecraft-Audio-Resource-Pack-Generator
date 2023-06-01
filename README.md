@@ -1,5 +1,5 @@
 # Minecraft-Audio-Resource-Pack-Generator
-音频资源包生成器v1.0 powered by bilibili@TianKong_y  
+音频资源包生成器v1.0.0 powered by bilibili@TianKong_y  
 使用方法  
 1.将需要生成资源包的音频放入audios文件夹  
 2.运行main.py，按照界面内的提示输入资源包基础信息  
