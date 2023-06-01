@@ -13,7 +13,8 @@ import shutil
 def process(file_path, file_name):
 	global last
 	shutil.copy(file_path, target)
-	last = '"' + file_name + '"' + ':{"sounds":[{"name":"' + namespace + '/' + file_name + '"}]}'
+	tmp = file_name[:-4] #去掉".ogg"
+	last = '"' + tmp + '"' + ':{"sounds":[{"name":"' + namespace + '/' + tmp + '"}]}'
 
 def print_version():
 	print("""音频资源包生成器v1.0.0 powered by bilibili@TianKong_y
@@ -24,11 +25,12 @@ def print_version():
 	print("注意事项:")
 	print("1.audios文件夹中的音频文件名只能为英文/下划线")
 	print("2.音频的后缀名必须为.ogg")
+	print("3.调用方法为: /playsound minecraft:{音频名称(无后缀名)}")
 
 def input_information():
 	global name, namespace, version, description
 	name = input("请输入资源包的名称:")
-	namespace = input("请输入命名空间名称(调用时的指令需要用到，只能为英文/下划线，否则会调用失败):")
+	namespace = input("请输入命名空间名称(只能为英文/下划线，否则会调用失败):")
 	print("1.6.1(13w24a)–1.8.9                 => 1")
 	print("1.9(15w31a)–1.10.2                  => 2")
 	print("1.11(16w32a)–1.12.2(17w47b)         => 3")
