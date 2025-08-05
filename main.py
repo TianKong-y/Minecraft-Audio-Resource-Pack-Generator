@@ -42,8 +42,8 @@ class MinecraftAudioPackGenerator:
     }
     
     def __init__(self):
-        self.config = {}
-        self.base_path = Path(__file__).parent
+        self.config = {} 
+        self.base_path = Path.cwd() # 使用Path(__file__).parent会造成编译的exe出现temp目录路径问题
         self.config_file = self.base_path / "config.json"
         self.audios_folder = self.base_path / "audios"
         self.output_folder = self.base_path / "resource_pack"
@@ -295,7 +295,7 @@ class MinecraftAudioPackGenerator:
                 if not audio_files:
                     return []
         
-        print(f" 开始处理音频文件 (使用 {max_workers} 个并发线程)...")
+        print(f"🔄 开始处理音频文件 (使用 {max_workers} 个并发线程)...")
         
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             future_to_file = {
