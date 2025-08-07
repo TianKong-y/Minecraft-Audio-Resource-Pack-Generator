@@ -44,6 +44,7 @@ class MinecraftAudioPackGenerator:
     def __init__(self):
         self.config = {} 
         self.base_path = Path.cwd() # 使用Path(__file__).parent会造成编译的exe出现temp目录路径问题
+
         self.config_file = self.base_path / "config.json"
         self.audios_folder = self.base_path / "audios"
         self.output_folder = self.base_path / "resource_pack"
@@ -493,3 +494,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n程序出现错误: {e}")
         input("按Enter键退出...")
+
